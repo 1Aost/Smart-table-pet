@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0 auto;
+    // 眼睛
+    .eye1,.eye2 {
+        position: absolute;
+        top: 70px;
+        width: 30px;
+        height: 70px;
+        border-radius: 30px;
+        border: 2px solid #88ABDA;
+    }
+    .eye1 {
+        left: 170px;
+    }
+    .eye2 {
+        left: 280px;
+    }
+    // 设置部分
+    .set {
+        position: absolute;
+        left: 50%;
+        margin-left: -100px;
+        bottom: 70px;
+        width: 200px;
+        height: 200px;
+        .show {
+            display: flex;
+            justify-content: space-between;
+            .row {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 130px;
+                height: 130px;
+                margin-bottom: 10px;
+                .show1,.show2 {
+                    position: relative;
+                    width: 130px;
+                    height: 60px;
+                    background-color: #788392;
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -15px;
+                        top: 50%;
+                        margin-top: -15px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .show1 {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .show3 {
+                width: 60px;
+                height: 130px;
+                background-color: #788392;
+            }
+            .rad {
+                border-radius: 30px;
+            }
+        }
+        .btns {
+            display: flex;
+            justify-content: space-between;
+            .voice,.camera,.settings {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #788392;
+                img {
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -18px;
+                    top: 50%;
+                    margin-top: -18px;
+                    width: 36px;
+                    height: 36px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .voice {
+                background-color: #9C3232;
+            }
+        }
+    }
+}

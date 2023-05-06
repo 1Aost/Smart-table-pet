@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.box {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.box .eye1,
+.box .eye2 {
+  position: absolute;
+  top: 70px;
+  width: 30px;
+  height: 70px;
+  border-radius: 30px;
+  border: 2px solid #88ABDA;
+}
+.box .eye1 {
+  left: 170px;
+}
+.box .eye2 {
+  left: 280px;
+}
+.box .set {
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  bottom: 70px;
+  width: 200px;
+  height: 200px;
+}
+.box .set .show {
+  display: flex;
+  justify-content: space-between;
+}
+.box .set .show .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 10px;
+}
+.box .set .show .row .show1,
+.box .set .show .row .show2 {
+  position: relative;
+  width: 130px;
+  height: 60px;
+  background-color: #788392;
+}
+.box .set .show .row .show1 img,
+.box .set .show .row .show2 img {
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  top: 50%;
+  margin-top: -15px;
+  width: 30px;
+  height: 30px;
+}
+.box .set .show .row .show1:hover {
+  cursor: pointer;
+}
+.box .set .show .show3 {
+  width: 60px;
+  height: 130px;
+  background-color: #788392;
+}
+.box .set .show .rad {
+  border-radius: 30px;
+}
+.box .set .btns {
+  display: flex;
+  justify-content: space-between;
+}
+.box .set .btns .voice,
+.box .set .btns .camera,
+.box .set .btns .settings {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #788392;
+}
+.box .set .btns .voice img,
+.box .set .btns .camera img,
+.box .set .btns .settings img {
+  position: absolute;
+  left: 50%;
+  margin-left: -18px;
+  top: 50%;
+  margin-top: -18px;
+  width: 36px;
+  height: 36px;
+}
+.box .set .btns .voice:hover,
+.box .set .btns .camera:hover,
+.box .set .btns .settings:hover {
+  cursor: pointer;
+}
+.box .set .btns .voice {
+  background-color: #9C3232;
+}
