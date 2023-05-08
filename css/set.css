@@ -10,7 +10,7 @@ body {
   border-radius: 50%;
   position: relative;
   z-index: 2;
-  touch-action: auto;
+  margin: 0 auto;
 }
 .box #center {
   position: relative;
@@ -35,12 +35,28 @@ body {
   font-weight: 500;
   color: #000;
   text-decoration: none;
-  transition: width 0.5s ease-in-out;
-  transition: marginLeft 0.5s ease-in-out;
+  transition: width 0s ;
+  transition: margin-left 0s;
 }
 .box #center li:hover {
   color: white;
 }
 .box #center li span {
   color: white;
+}
+.box #center li:nth-child(2),
+.box #center li:nth-child(6) {
+  width: 200px;
+  margin-left: -25px;
+}
+.box #center li:nth-child(3),
+.box #center li:nth-child(5) {
+  width: 250px;
+  margin-left: -50px;
+  border-color: white;
+}
+.box #center li:nth-child(4) {
+  width: 300px;
+  margin-left: -75px;
+  border-color: white;
 }
