@@ -10,34 +10,37 @@
     border-radius: 50%;
     position: relative;
     z-index: 2;
-    ul {
+    touch-action: auto;
+    #center {
         position: relative;
         list-style-type: none;
         margin: 0;
         padding: 0;
         background-color: transparent;
+        left: 160px;
+        top: 50px;
         li {
-            // display: inline;
-            height: 65px;
-            line-height: 65px;
+            display: block;
+            height: 40px;
+            width: 150px;
+            line-height: 40px;
             text-align: center;
-            border-bottom: solid 4px rgb(77, 77, 77);
-            font-size: 35px;   
+            border-radius: 50px;
+            border: solid 2px rgb(77, 77, 77);
+            margin-bottom: 10px;
+            margin-left: 0px;
+            font-size: 15px;   
             font-weight: 500;
-            &:nth-child(1){
-                width: 300px;
+            color: #000; 
+            text-decoration: none;
+            transition: width 0.5s ease-in-out;
+            transition: marginLeft 0.5s ease-in-out;
+            &:hover {
+                // background-color: rgb(206, 204, 204);
+                color: white;
             }
-            a {
-                display: block;
-                color: #000; 
-                text-decoration: none;
-                &:hover {
-                    background-color: rgb(206, 204, 204);
-                    color: white;
-                }
-                span{
-                    color: white;
-                }
+            span{
+                color: white;
             }
         }
         
