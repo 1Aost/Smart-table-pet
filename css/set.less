@@ -27,15 +27,16 @@
             line-height: 40px;
             text-align: center;
             border-radius: 50px;
-            border: solid 2px rgb(77, 77, 77);
+            border: solid 2px white;
             margin-bottom: 10px;
             margin-left: 0px;
             font-size: 15px;   
             font-weight: 500;
             color: #000; 
             text-decoration: none;
-            transition: width 0s ;
-            transition: margin-left 0s ;
+            transition: width 1s,margin-left 1s ;
+            opacity: 0.4;
+            // transition: margin-left 5s ;
             &:hover {
                 // background-color: rgb(206, 204, 204);
                 color: white;
@@ -46,16 +47,19 @@
             &:nth-child(2),&:nth-child(6){
                 width: 200px;
                 margin-left: -25px;
+                opacity: 0.6;
             }
             &:nth-child(3),&:nth-child(5){
                 width: 250px;
                 margin-left: -50px;
                 border-color: white;
+                opacity: 0.8;
             }
             &:nth-child(4){
                 width: 300px;
                 margin-left: -75px;
                 border-color: white;
+                opacity: 1;
             }
         }
       }      
