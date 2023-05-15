@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.box {
+.box1 {
   position: relative;
   width: 480px;
   height: 480px;
@@ -11,8 +11,8 @@
   border-radius: 50%;
   margin: 0 auto;
 }
-.box .eye1,
-.box .eye2 {
+.box1 .eye1,
+.box1 .eye2 {
   position: absolute;
   top: 70px;
   width: 30px;
@@ -20,9 +20,9 @@
   border-radius: 30px;
   border: 2px solid #88ABDA;
 }
-.box .eye1 {
+.box1 .eye1 {
   left: 170px;
 }
-.box .eye2 {
+.box1 .eye2 {
   left: 280px;
 }

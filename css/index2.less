@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+@keyframes change {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+        box-shadow: 0 0 50px #788392;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .box {
     position: relative;
     width: 480px;
@@ -10,20 +22,25 @@
     background-color: #000;
     border-radius: 50%;
     margin: 0 auto;
-    // 眼睛
-    .eye1,.eye2 {
+    // 时间部分
+    .time {
         position: absolute;
-        top: 70px;
-        width: 30px;
-        height: 70px;
-        border-radius: 30px;
-        border: 2px solid #88ABDA;
-    }
-    .eye1 {
-        left: 170px;
-    }
-    .eye2 {
-        left: 280px;
+        top: 77px;
+        left: 50%;
+        margin-left: -140px;
+        width: 280px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: #9C3232;
+        h1 {
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+        }
+        /* span {
+            width: 100px;
+            
+        } */
     }
     // 设置部分
     .set {
@@ -100,4 +117,8 @@
             }
         }
     }
+}
+.ani {
+    animation-name: change;
+    animation-duration: 2.5s;
 }
