@@ -20,7 +20,7 @@ box.addEventListener('touchstart', function(e) {
 box.addEventListener('touchmove', function(e) {
     var touch = e.touches[0]
     this.endY = this.startY - touch.pageY;
-    this.endX = this.startY - touch.pageX;
+    this.endX = touch.pageX;
     // console.log(this.endX);
     if ((currentY - this.endY) >= -110 && (currentY - this.endY) <= 256) {
         ul.style.top = `${currentY - this.endY}px`
@@ -57,8 +57,9 @@ box.addEventListener('touchmove', function(e) {
 
 box.addEventListener('touchend', function(e) {
     var touch = e.touches[0]
-    console.log(this.endX);
-    if(Math.abs(this.endX)>100&&Math.abs(this.endY) < 5){
+    var len = this.startX - this.endX
+    console.log(this.endY,this.endX);
+    if(Math.abs(len)>100){
         location.href = "./index2.html";
     }
 })
