@@ -13,7 +13,7 @@ window.onload = () => {
         obj.classList.add("ani");
         setTimeout(()=>{
             obj.classList.remove("ani");
-        },2500);
+        },2000);
     }
     /* 匹配函数 */
     function matching(obj,regex,uu1,uu2) {
@@ -37,8 +37,8 @@ window.onload = () => {
     function getTime() {
         let hours=day.getHours();
         let minutes=day.getMinutes();
-        hours=hours>10?hours:"0"+hours;
-        minutes=minutes>10?minutes:"0"+minutes;
+        hours=hours>=10?hours:"0"+hours;
+        minutes=minutes>=10?minutes:"0"+minutes;
         return hours+":"+minutes;
     }
     time.children[0].innerHTML=getTime();
