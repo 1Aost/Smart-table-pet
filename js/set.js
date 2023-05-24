@@ -58,7 +58,7 @@ box.addEventListener('touchmove', function(e) {
 box.addEventListener('touchend', function(e) {
     var touch = e.touches[0]
     var len = this.startX - this.endX
-    console.log(this.endY,this.endX);
+    console.log(len);
     if(Math.abs(len)>100){
         location.href = "./index2.html";
     }

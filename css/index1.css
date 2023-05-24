@@ -3,13 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
-.box1 {
-  position: relative;
+.box1,
+.standby1,
+.standby2,
+.tired,
+.alert {
+  display: none;
+  position: absolute;
   width: 480px;
   height: 480px;
-  background-color: #000;
   border-radius: 50%;
-  margin: 0 auto;
+  background-color: #000;
+  margin-left: 50%;
+  left: -240px;
+}
+.box1 img,
+.standby1 img,
+.standby2 img,
+.tired img,
+.alert img {
+  width: 100%;
+  height: 100%;
+}
+.box1 {
+  display: block;
 }
 .box1 .eye1,
 .box1 .eye2 {
@@ -25,4 +42,7 @@
 }
 .box1 .eye2 {
   left: 280px;
+}
+button {
+  margin-top: 500px;
 }
