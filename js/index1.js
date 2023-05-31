@@ -55,21 +55,37 @@ function f1() {
  * 1：开机，open
  * 
  */
-// function say_hello_js() {
-//     eel.function1()(function(data){
-//         //传入值为0，关机操作，box1隐藏，box2显示，先播放tired后close
-//         if(data===0){
-//             img.src = "../images/change/tired.gif"
-//             box1.style.display = 'none'
-//             box2.style.display = 'block'
-//             setTimeout(()=>{
-//                 img.src = "../images/change/close.gif"
-//             },1700)
-//         }
-//         //传入值为1，开机操作，box1隐藏，box2显示，播放开机gif
-        
-//     });
-// };
+function say_hello_js() {
+    eel.function1()(function(data){
+        //传入值为0，关机操作，box1隐藏，box2显示，先播放tired后close
+        if(data===0){
+            img.src = "../images/change/tired.gif"
+            box1.style.display = 'none'
+            box3.style.display = 'none'
+            box2.style.display = 'block'
+            setTimeout(()=>{
+                img.src = "../images/change/close.gif"   
+            },1700)
+            setTimeout(() => {
+                box1.style.display = 'none'
+                box3.style.display = 'block'
+                box2.style.display = 'none'
+            }, 3800);
+        }
+        //传入值为1，开机操作，box1隐藏，box2显示，播放开机gif
+        else if (data === 1){
+            img.src = "../images/change/open.gif"
+            box1.style.display = 'none'
+            box3.style.display = 'none'
+            box2.style.display = 'block'
+            setTimeout(()=>{
+                box1.style.display = 'block'
+                box3.style.display = 'none'
+                box2.style.display = 'none'
+            },2400)
+        }
+    });
+};
 function f2() {
     
     let btn=document.querySelectorAll("button");
@@ -119,21 +135,17 @@ function f2() {
             box3.style.display = 'block'
             box2.style.display = 'none'
         }, 3800);
-        // 关机后，怎么把盒子三放上边，你搞搞，我这个没搞完，得上课了
-
-
-
-
-
-
-
-
-
     })
     
     btn[1].addEventListener("click",()=>{
-        img.src = "../images/change/hug.gif"
+        img.src = "../images/change/open.gif"
         box1.style.display = 'none'
+        box3.style.display = 'none'
         box2.style.display = 'block'
+        setTimeout(()=>{
+            box1.style.display = 'block'
+            box3.style.display = 'none'
+            box2.style.display = 'none'
+        },2400)
     })
 } 
