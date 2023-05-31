@@ -25,39 +25,42 @@
 .box1 .eye1,
 .box1 .eye2 {
   position: absolute;
-  top: 70px;
+  top: 130px;
   width: 180px;
   height: 180px;
 }
 .box1 .eye1 {
   left: 60px;
-  top: 100px;
 }
 .box1 .eye1 img {
   width: 21%;
   position: absolute;
-  right: 71px;
-  bottom: 3px;
+  left: 71.208px;
+  top: 53.85px;
+  transition: all 0.5s linear;
 }
 .box1 .eye2 {
   right: 60px;
-  top: 100px;
 }
 .box1 .eye2 img {
   width: 21%;
   position: absolute;
-  left: 71px;
-  bottom: 3px;
+  left: 71.208px;
+  top: 53.85px;
+  transition: all 0.5s linear;
 }
 .box1 .mouth {
   height: 30px;
-  width: 80px;
+  width: 300px;
   position: absolute;
   bottom: 130px;
-  left: 205px;
+  left: 105px;
 }
 .box1 .mouth img {
-  width: 90%;
+  width: 72px;
+  position: absolute;
+  left: 100px;
+  transition: all 0.5s linear;
 }
 .box2 img {
   width: 100%;
@@ -65,4 +68,20 @@
 }
 button {
   margin-top: 500px;
+}
+.ani {
+  animation-name: change;
+  animation-duration: 2.5s;
+}
+@keyframes change {
+  0% {
+    transform: translate3d();
+  }
+  50% {
+    transform: scale(0.6);
+    box-shadow: 0 0 50px blue;
+  }
+  100% {
+    transform: scale(1);
+  }
 }

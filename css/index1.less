@@ -21,43 +21,53 @@
     background-position: -23px -23px;
     .eye1,.eye2 {
         position: absolute;
-        top: 70px;
+        top: 130px;
         width: 180px;
         height: 180px;
+        // background-color: pink;
         // border-radius: 30px;
         // border: 2px solid #88ABDA;
     }
     .eye1 {
         left: 60px;
-        top: 100px;
         // background-color: bisque;
         img{
             width: 21%;
             position: absolute;
-            right: 71px;
-            bottom: 3px;
+            // right: 71px;
+            // bottom: 30px;
+            left: 71.208px;
+            top: 53.850px;
+            transition: all 0.5s linear;
         }
     }
     .eye2 {
         right: 60px;
-        top: 100px;
         // background-color: red;
         img{
             width: 21%;
             position: absolute;
-            left: 71px;
-            bottom: 3px;
+            // left: 71px;
+            // bottom: 30px;
+            left: 71.208px;
+            top: 53.850px;
+            transition: all 0.5s linear;
+
         }
     }
     .mouth {
         height: 30px;
-        width: 80px;
+        width: 300px;
         // background-color: red;
         position: absolute;
         bottom: 130px;
-        left: 205px;
+        left: 105px;
         img{
-            width: 90%;
+            width: 72px;
+            position: absolute;
+            left: 100px;
+            transition: all 0.5s linear;
+
         }
     }
 }
@@ -69,4 +79,20 @@
 }
 button {
     margin-top: 500px;
+}
+.ani {
+    animation-name: change;
+    animation-duration: 2.5s;
+}
+@keyframes change {
+    0% {
+        transform: translate3d();
+    }
+    50% {
+        transform: scale(0.6);
+        box-shadow: 0 0 50px blue;
+    }
+    100% {
+        transform: scale(1);
+    }
 }

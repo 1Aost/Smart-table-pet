@@ -1,6 +1,7 @@
 window.onload=()=>{
     f1();
     f2();
+    f3();
 
     // 智能休眠唤醒
     // sleep_wake();
@@ -247,4 +248,62 @@ function f2() {
             box2.style.display = 'none'
         },2900)
     })
-} 
+    btn[2].addEventListener('click',()=>{
+        let eye1=document.querySelector('.eye1').querySelector("img");
+        let eye2=document.querySelector('.eye2').querySelector("img");
+        let mouth=document.querySelector(".mouth").querySelector("img");
+        let left=Number(window.getComputedStyle(eye1).left.slice(0,-2));
+        let top=Number(window.getComputedStyle(eye1).top.slice(0,-2));
+        let mL=Number(window.getComputedStyle(mouth).left.slice(0,-2));
+        let timer=setInterval(()=>{
+            // console.log("aaa",left,top,mL);
+            if(left>70 && top > 53 && mL >98){
+                // console.log(left,top,mL);
+                clearInterval(timer)
+            }else {
+                left+=5; 
+                top+=3;
+                mL+=4;
+            }
+            // console.log("123",left,top,mL);
+
+            eye1.style.left=left+"px";
+            eye2.style.left=left+"px";
+            eye1.style.top=top+"px";
+            eye2.style.top=top+"px";
+            mouth.style.left=mL+"px";
+        },10);
+    })
+}
+
+function f3() {
+    let eye1=document.querySelector('.eye1').querySelector("img");
+    let eye2=document.querySelector('.eye2').querySelector("img");
+    let mouth=document.querySelector(".mouth").querySelector("img");
+    let left=Number(window.getComputedStyle(eye1).left.slice(0,-2));
+    let top=Number(window.getComputedStyle(eye1).top.slice(0,-2));
+    let mL=Number(window.getComputedStyle(mouth).left.slice(0,-2));
+    // console.log(left,top,mL);
+
+    let timer=setInterval(()=>{
+        if(left<10 || top<10 || mL<10) {
+            clearInterval(timer);
+        }else {
+            left-=5;
+            top-=3;
+            mL-=4;
+            // left+=5;
+            // top-=3;
+            // mL+=4;
+        }
+        eye1.style.left=left+"px";
+        eye2.style.left=left+"px";
+        eye1.style.top=top+"px";
+        eye2.style.top=top+"px";
+        mouth.style.left=mL+"px";
+    },10);
+    
+    
+    // mouth.style.left=""
+    
+}
