@@ -16,17 +16,11 @@
   left: -240px;
   top: 0px;
 }
-.box1 img,
-.box2 img,
-.box3 img {
-  width: 100%;
-  height: 100%;
-}
 .box1 {
   display: block;
   background-image: url(../images/parts/aperture/aperture_normal.png);
-  background-size: 112%;
-  background-position: -25px -25px;
+  background-size: 109.5%;
+  background-position: -23px -23px;
 }
 .box1 .eye1,
 .box1 .eye2 {
@@ -37,11 +31,37 @@
 }
 .box1 .eye1 {
   left: 60px;
-  background-color: bisque;
+  top: 100px;
+}
+.box1 .eye1 img {
+  width: 21%;
+  position: absolute;
+  right: 71px;
+  bottom: 3px;
 }
 .box1 .eye2 {
   right: 60px;
-  background-color: red;
+  top: 100px;
+}
+.box1 .eye2 img {
+  width: 21%;
+  position: absolute;
+  left: 71px;
+  bottom: 3px;
+}
+.box1 .mouth {
+  height: 30px;
+  width: 80px;
+  position: absolute;
+  bottom: 130px;
+  left: 205px;
+}
+.box1 .mouth img {
+  width: 90%;
+}
+.box2 img {
+  width: 100%;
+  height: 100%;
 }
 button {
   margin-top: 500px;

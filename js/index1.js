@@ -1,8 +1,19 @@
 window.onload=()=>{
     f1();
     f2();
-    // say_hello_js();
+
+    // 智能休眠唤醒
+    // sleep_wake();
+
+    // 眼神追踪，情绪检测
+    // trace()
 }
+
+// let box2=document.querySelector('.box2')
+// let box1=document.querySelector('.box1')
+// let box3=document.querySelector('.box3')
+// console.log(box1);
+// let img = box2.getElementsByTagName('img')
 
 function f1() {
     let start,move,num;
@@ -55,7 +66,9 @@ function f1() {
  * 1：开机，open
  * 
  */
-function say_hello_js() {
+
+// 智能休眠唤醒
+function sleep_wake() {
     eel.function1()(function(data){
         //传入值为0，关机操作，box1隐藏，box2显示，先播放tired后close
         if(data===0){
@@ -82,17 +95,74 @@ function say_hello_js() {
                 box1.style.display = 'block'
                 box3.style.display = 'none'
                 box2.style.display = 'none'
-            },2400)
+            },2600)
         }
     });
 };
+
+// 眼神追踪，情绪检测
+function trace() {
+    eel.function2()(function(data){
+        // 数组data中存储这三个信息：0/1表示是否是人像，当为1时，才进行眼神追踪和情绪检测
+        if(data[0]===1){
+            //当为1时，进入该函数
+            let emotion = data[1];
+            let coordinate = [data[2],data[3]]
+
+            // 情绪检测
+            // 6 -- 不变化 
+            // 2,4 -- hug
+            // 0,1,5 -- comfort
+            // 3 -- happy
+            if(emotion===0||emotion===1||emotion===5){
+                img.src = "../images/change/comfort.gif"
+                box1.style.display = 'none'
+                box3.style.display = 'none'
+                box2.style.display = 'block'
+                setTimeout(() => {
+                    box1.style.display = 'block'
+                    box3.style.display = 'none'
+                    box2.style.display = 'none'
+                }, 2500);
+            }else if(emotion===2||emotion===4){
+                img.src = "../images/change/hug.gif"
+                box1.style.display = 'none'
+                box3.style.display = 'none'
+                box2.style.display = 'block'
+                setTimeout(() => {
+                    box1.style.display = 'block'
+                    box3.style.display = 'none'
+                    box2.style.display = 'none'
+                }, 2100);
+            }else if(emotion===3){
+                img.src = "../images/change/happy.gif"
+                box1.style.display = 'none'
+                box3.style.display = 'none'
+                box2.style.display = 'block'
+                setTimeout(() => {
+                    box1.style.display = 'block'
+                    box3.style.display = 'none'
+                    box2.style.display = 'none'
+                }, 2400);
+            }
+
+            // 眼神追踪
+        }
+    });
+};
+
 function f2() {
-    
-    let btn=document.querySelectorAll("button");
     let box2=document.querySelector('.box2')
     let box1=document.querySelector('.box1')
     let box3=document.querySelector('.box3')
     let img = box2.querySelector('img')
+    let eye1 = document.querySelector('.eye1')
+    let eye2 = document.querySelector('.eye2')
+    let left = eye1.querySelector('img')
+    let right = eye2.querySelector('img')
+    
+    let btn=document.querySelectorAll("button");
+    
     // console.log(img);
     let data={
         // 待机
@@ -122,19 +192,48 @@ function f2() {
         a.style.display="block";
     }
     btn[0].addEventListener("click",()=>{
-        img.src = "../images/change/tired.gif"
-        box1.style.display = 'none'
-        box3.style.display = 'none'
-        box2.style.display = 'block'
-        setTimeout(()=>{
-            img.src = "../images/change/close.gif"
-            
-        },1700)
-        setTimeout(() => {
-            box1.style.display = 'none'
-            box3.style.display = 'block'
-            box2.style.display = 'none'
-        }, 3800);
+        
+        let data = [1,3,2,5]
+        if(data[0]===1){
+            //当为1时，进入该函数
+            let emotion = data[1];
+            let coordinate = [data[2],data[3]]
+            // 6 -- 不变化 
+            // 2,4 -- hug
+            // 0,1,5 -- comfort
+            // 3 -- happy
+            if(emotion===0||emotion===1||emotion===5){
+                img.src = "../images/change/comfort.gif"
+                box1.style.display = 'none'
+                box3.style.display = 'none'
+                box2.style.display = 'block'
+                setTimeout(() => {
+                    box1.style.display = 'block'
+                    box3.style.display = 'none'
+                    box2.style.display = 'none'
+                }, 2500);
+            }else if(emotion===2||emotion===4){
+                img.src = "../images/change/hug.gif"
+                box1.style.display = 'none'
+                box3.style.display = 'none'
+                box2.style.display = 'block'
+                setTimeout(() => {
+                    box1.style.display = 'block'
+                    box3.style.display = 'none'
+                    box2.style.display = 'none'
+                }, 2100);
+            }else if(emotion===3){
+                img.src = "../images/change/happy.gif"
+                box1.style.display = 'none'
+                box3.style.display = 'none'
+                box2.style.display = 'block'
+                setTimeout(() => {
+                    box1.style.display = 'block'
+                    box3.style.display = 'none'
+                    box2.style.display = 'none'
+                }, 2400);
+            }
+        }
     })
     
     btn[1].addEventListener("click",()=>{
@@ -146,6 +245,6 @@ function f2() {
             box1.style.display = 'block'
             box3.style.display = 'none'
             box2.style.display = 'none'
-        },2400)
+        },2900)
     })
 } 
