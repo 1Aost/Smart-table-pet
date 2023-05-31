@@ -1,7 +1,9 @@
 window.onload=()=>{
     f1();
     f2();
+    // say_hello_js();
 }
+
 function f1() {
     let start,move,num;
     let box1=document.querySelector(".box1");
@@ -34,86 +36,99 @@ function f1() {
         }
     })
 }
+/**
+ * 待机：暂时不做
+ * 
+ * function2：
+ * 情绪检测，眼神追踪：（0/1,1/2/3/4/5/6，坐标）
+ * 情绪检测：上方0123456切换表情变化
+ *      6 -- 不变化 
+ *      2,4 -- hug
+ *      0,1,5 -- comfort
+ *      3 -- happy
+ *  
+ * 眼神追踪：坐标
+ * 
+ * function1：
+ * 智能休眠唤醒：0,1
+ * 0：关机，tired完后close
+ * 1：开机，open
+ * 
+ */
+// function say_hello_js() {
+//     eel.function1()(function(data){
+//         //传入值为0，关机操作，box1隐藏，box2显示，先播放tired后close
+//         if(data===0){
+//             img.src = "../images/change/tired.gif"
+//             box1.style.display = 'none'
+//             box2.style.display = 'block'
+//             setTimeout(()=>{
+//                 img.src = "../images/change/close.gif"
+//             },1700)
+//         }
+//         //传入值为1，开机操作，box1隐藏，box2显示，播放开机gif
+        
+//     });
+// };
 function f2() {
+    
     let btn=document.querySelectorAll("button");
-    let tired=document.querySelector(".tired");
-    let alert=document.querySelector(".alert");
-    let standby1=document.querySelector(".standby1");
-    let standby2=document.querySelector(".standby2");
+    let box2=document.querySelector('.box2')
+    let box1=document.querySelector('.box1')
+    let box3=document.querySelector('.box3')
+    let img = box2.querySelector('img')
+    // console.log(img);
     let data={
+        // 待机
         standby1: false,
         standby2: false,
-        tired: false,
-        alert: false
+        standby3: false,
+
+        // 开心
+        happy: false,//2400ms
+        // 疲惫
+        tired: false,//1700ms
+        // 安慰
+        comfort: false,//2600ms
+        // 拥抱
+        hug: false,//2100ms
+
+        // 警告
+        alert: false,//2200ms
+
+        // 开关机
+        close: false,//2200ms
+        open:false//2400ms
     }
-    function nor() {
-        standby1.style.display='none';
-        standby2.style.display='none';
-        tired.style.display='none';
-        alert.style.display='none';
-    }
+    let data2 = Object.entries(data)
     function func(a) {
-        nor();
+        // nor();
         a.style.display="block";
     }
-    const envResolver={
-        "standby1":()=>{
-            return func(standby1);
-        },
-        "standby2":()=>{
-            return func(standby2);
-        },
-        "alert":()=>{
-            return func(alert);
-        },
-        "tired":()=>{
-            return func(tired);
-        }
-    }
-    data={
-        standby1: true,
-        standby2: false,
-        tired: false,
-        alert: false
-    }
-    // let dn=data.filters((item)=>{
-    //     return item;
-    // })
     btn[0].addEventListener("click",()=>{
-        data={
-            standby1: true,
-            standby2: false,
-            tired: false,
-            alert: false
-        }
-        
-        envResolver["standby1"]()
+        img.src = "../images/change/tired.gif"
+        box1.style.display = 'none'
+        box3.style.display = 'none'
+        box2.style.display = 'block'
+        setTimeout(()=>{
+            img.src = "../images/change/close.gif"
+        },1700)
+
+        // 关机后，怎么把盒子三放上边，你搞搞，我这个没搞完，得上课了
+
+
+
+
+
+
+
+
+
     })
+    
     btn[1].addEventListener("click",()=>{
-        data={
-            standby1: false,
-            standby2: true,
-            tired: false,
-            alert: false
-        }
-        envResolver["standby2"]()
+        img.src = "../images/change/hug.gif"
+        box1.style.display = 'none'
+        box2.style.display = 'block'
     })
-    btn[2].addEventListener("click",()=>{
-        data={
-            standby1: false,
-            standby2: false,
-            tired: false,
-            alert: true
-        }
-        envResolver["alert"]()
-    })
-    btn[3].addEventListener("click",()=>{
-        data={
-            standby1: false,
-            standby2: false,
-            tired: true,
-            alert: false
-        }
-        envResolver["tired"]()
-    })
-}
+} 

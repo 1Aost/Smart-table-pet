@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.box1,.standby1,.standby2,.tired,.alert {
+.box1,.box2,.box3 {
     display: none;
     position: absolute;
     width: 480px;
@@ -19,19 +19,24 @@
 }
 .box1 {
     display: block;
+    background-image: url(../images/parts/aperture/aperture_normal.png);
+    background-size: 112%;
+    background-position: -25px -25px;
     .eye1,.eye2 {
         position: absolute;
         top: 70px;
-        width: 30px;
-        height: 70px;
-        border-radius: 30px;
-        border: 2px solid #88ABDA;
+        width: 180px;
+        height: 180px;
+        // border-radius: 30px;
+        // border: 2px solid #88ABDA;
     }
     .eye1 {
-        left: 170px;
+        left: 60px;
+        background-color: bisque;
     }
     .eye2 {
-        left: 280px;
+        right: 60px;
+        background-color: red;
     }
 }
 button {

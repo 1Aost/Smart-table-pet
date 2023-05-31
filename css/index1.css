@@ -4,10 +4,8 @@
   box-sizing: border-box;
 }
 .box1,
-.standby1,
-.standby2,
-.tired,
-.alert {
+.box2,
+.box3 {
   display: none;
   position: absolute;
   width: 480px;
@@ -18,30 +16,31 @@
   left: -240px;
 }
 .box1 img,
-.standby1 img,
-.standby2 img,
-.tired img,
-.alert img {
+.box2 img,
+.box3 img {
   width: 100%;
   height: 100%;
 }
 .box1 {
   display: block;
+  background-image: url(../images/parts/aperture/aperture_normal.png);
+  background-size: 112%;
+  background-position: -25px -25px;
 }
 .box1 .eye1,
 .box1 .eye2 {
   position: absolute;
   top: 70px;
-  width: 30px;
-  height: 70px;
-  border-radius: 30px;
-  border: 2px solid #88ABDA;
+  width: 180px;
+  height: 180px;
 }
 .box1 .eye1 {
-  left: 170px;
+  left: 60px;
+  background-color: bisque;
 }
 .box1 .eye2 {
-  left: 280px;
+  right: 60px;
+  background-color: red;
 }
 button {
   margin-top: 500px;
