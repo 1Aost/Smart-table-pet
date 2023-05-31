@@ -112,8 +112,13 @@ function f2() {
         box2.style.display = 'block'
         setTimeout(()=>{
             img.src = "../images/change/close.gif"
+            
         },1700)
-
+        setTimeout(() => {
+            box1.style.display = 'none'
+            box3.style.display = 'block'
+            box2.style.display = 'none'
+        }, 3800);
         // 关机后，怎么把盒子三放上边，你搞搞，我这个没搞完，得上课了
 
 
